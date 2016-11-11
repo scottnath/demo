@@ -1,0 +1,76 @@
+{
+  "name": "punchcard-demo",
+  "description": "Demonstration Repository for Punchcard CMS",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "npm run lint",
+    "test": "npm run nyc",
+    "posttest": "gulp build",
+    "start": "forever -o out.log index.js ",
+    "lint": "gulp lint",
+    "ava:watch": "NODE_CONFIG_DIR=../config ava --watch",
+    "ava": "NODE_CONFIG_DIR=../config ava",
+    "nyc": "NODE_APP_INSTANCE=test nyc --all npm run ava",
+    "dev:database": "postgres -D /usr/local/var/postgres",
+    "dev:start": "gulp",
+    "dev": "npm run dev:database & npm run dev:start",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "reparo": "reparo -b master"
+  },
+  "repository": {
+    "url": "https://github.com/punchcard-cms/demo.git",
+    "type": "git"
+  },
+  "author": "Sam Richard <sam@snug.ug>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "config": "^1.24.0",
+    "forever": "^0.15.3",
+    "punchcard-cms": "^2.29.0",
+    "supertest": "^2.0.1"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "coveralls": "^2.11.15",
+    "eslint-config-punchcard": "^1.1.1",
+    "ghooks": "^1.3.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-uglify": "^2.0.0",
+    "nyc": "^6.6",
+    "punchcard-commit-msg": "^1.0.1",
+    "punchcard-runner": "^2.1.3",
+    "punchcard-semantic-release": "^2.0.2",
+    "punchcard-shared-tests": "^1.0.3",
+    "reparo": "^1.1.1-0",
+    "semantic-release": "^4.3.5",
+    "supertest": "^2.0.1"
+  },
+  "nyc": {
+    "exclude": [
+      "tests/**/*",
+      "config/**/*",
+      "public/**/*",
+      "Gulpfile.js",
+      "coverage"
+    ]
+  },
+  "ava": {
+    "files": [
+      "tests/*.js"
+    ],
+    "failFast": false,
+    "tap": false
+  },
+  "config": {
+    "ghooks": {
+      "commit-msg": "punchcard-commit-msg"
+    }
+  },
+  "release": {
+    "analyzeCommits": "punchcard-semantic-release/analyze",
+    "generateNotes": "punchcard-semantic-release/notes"
+  }
+}
