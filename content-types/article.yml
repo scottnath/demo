@@ -1,0 +1,14 @@
+name: Article
+description: A long form article
+id: article
+workflow: self-publish
+identifier: title
+attributes:
+  - type: text
+    id: title
+    name: Title
+    description: Title of the Article
+    required: save
+    inputs:
+      text:
+        placeholder: Title
