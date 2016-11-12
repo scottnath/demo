@@ -1,6 +1,6 @@
 import test from 'ava';
 import request from 'supertest';
-import punchcard from 'punchcard-cms';
+import punchcard from '../';
 
 let agent;
 
@@ -12,8 +12,7 @@ test.cb.before(t => {
   });
 });
 
-
-test.cb('CMS Landing Page', t => {
+test.cb('Landing Page', t => {
   agent
     .get('/login')
     .expect(200)
