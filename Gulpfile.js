@@ -1,6 +1,10 @@
 const gulp = require('gulp');
 const config = require('config');
 const runner = require('punchcard-runner');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const imagemin = require('gulp-imagemin');
+const path = require('path');
 
 const options = runner.config({
   application: {
