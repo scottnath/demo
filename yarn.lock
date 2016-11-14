@@ -4148,6 +4148,16 @@ input-plugin-email@^0.2.0:
   dependencies:
     validator "^5.2.0"
 
+input-plugin-file:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/input-plugin-file/-/input-plugin-file-1.1.0.tgz#2aa932f36dde80906243defcdf4d803f4f04a1e0"
+
+input-plugin-number:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/input-plugin-number/-/input-plugin-number-0.2.1.tgz#c771f79113c7f242610587e15037419e6921c4ca"
+  dependencies:
+    validator "^5.7.0"
+
 input-plugin-password@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/input-plugin-password/-/input-plugin-password-0.1.4.tgz#79c0e2af21a250db3aaa0cee941df9461d142f87"
@@ -4168,7 +4178,7 @@ input-plugin-text@^0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/input-plugin-text/-/input-plugin-text-0.1.3.tgz#9eb18d146dbd3052bda8e84d53534b222010b823"
 
-input-plugin-textarea@^0.1.3:
+input-plugin-textarea, input-plugin-textarea@^0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/input-plugin-textarea/-/input-plugin-textarea-0.1.3.tgz#6bf22f49303c690266223a8e8bbd905d611ae023"
 
@@ -4809,6 +4819,10 @@ localtunnel@1.8.1:
     request "2.65.0"
     yargs "3.29.0"
 
+lodash, lodash@^4.0.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.14.1, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.6.0:
+  version "4.17.0"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.0.tgz#93f4466e5ab73e5a1f1216c34eea11535f0a8df5"
+
 lodash._arraycopy@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/lodash._arraycopy/-/lodash._arraycopy-3.0.0.tgz#76e7b7c1f1fb92547374878a562ed06a3e50f6e1"
@@ -5084,10 +5098,6 @@ lodash.toplainobject@^3.0.0:
 lodash@^3.10.1, lodash@^3.6.0, lodash@^3.9.3, lodash@~3.10.0:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
-
-lodash@^4.0.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.14.1, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.6.0:
-  version "4.17.0"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.0.tgz#93f4466e5ab73e5a1f1216c34eea11535f0a8df5"
 
 lodash@~1.0.1:
   version "1.0.2"
@@ -6541,7 +6551,7 @@ punchcard-semantic-release@^2.0.2:
     github-url-from-git "^1.4.0"
     lodash "^4.13.1"
 
-punchcard-shared-tests@^1.0.3:
+punchcard-shared-tests:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/punchcard-shared-tests/-/punchcard-shared-tests-1.0.3.tgz#591d319b516fa53e04afeeafb869a0e59a1c4159"
   dependencies:
@@ -8183,7 +8193,7 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "~1.0.0"
     spdx-expression-parse "~1.0.0"
 
-validator@^5.2.0:
+validator@^5.2.0, validator@^5.7.0:
   version "5.7.0"
   resolved "https://registry.yarnpkg.com/validator/-/validator-5.7.0.tgz#7a87a58146b695ac486071141c0c49d67da05e5c"
 
