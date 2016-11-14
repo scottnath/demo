@@ -10,9 +10,6 @@
     "headless",
     "punchcard"
   ],
-  "scripts": {
-    "postdeploy": "yarn run build"
-  },
   "website": "https://github.com/punchcard-cms/punchcard",
   "addons": [
     {
