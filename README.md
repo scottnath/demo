@@ -42,8 +42,6 @@ Canonically, Punchcard uses [AVA](https://github.com/avajs/ava) for testing (bot
 
 The basic test that ships with this repository checks to ensure that Punchcard can run with any modifications an end-user may want to make to the application coming from Punchcard. Custom input plugins are tested using [Punchcard Shared Tests](https://github.com/punchcard-cms/shared-tests).
 
-The one gotcha when testing Punchcard is ensuring that the `workflows` folder is symlinked (or otherwise available directly) in the `tests` folder.
-
 ## Punchcard Boilerplate
 
 The following files and folders represent a fairly basic example of Punchcard Boilerplate to get Punchcard up and running. They are divided in to [server](#server-boilerplate), [browser](#browser-boilerplate), [test](#test-boilerplate), and [config](#config-boilerplate). There are also generated files that can be mostly ignored.
@@ -81,7 +79,6 @@ Browser boilerplate is based on the default source and destination targets using
 **AVA Tests**
 * `tests` - Folder to run all tests
   * `tests/server.js` - Basic test using [SuperTest](https://www.npmjs.com/package/supertest) to ensure Punchcard is able to start
-  * `tests/workflows` - Symlinked `workflows` directory
 
 **Linting**
 * `.eslintrc.yml` - [ESLint](https://www.npmjs.com/package/eslint) configuration for all Node code
