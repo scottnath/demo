@@ -1,0 +1,27 @@
+{
+  "name": "Punchcard Demo",
+  "description": "Demo deployable instance of the Punchcard CMS",
+  "repository": "https://github.com/punchcard-cms/demo",
+  "logo": "https://punchcard-cms.herokuapp.com/images/punchcard-image.svg",
+  "keywords": [
+    "node",
+    "express",
+    "cms",
+    "headless",
+    "punchcard"
+  ],
+  "website": "https://github.com/punchcard-cms/punchcard",
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "9.5"
+      }
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs#yarn"
+    }
+  ]
+}

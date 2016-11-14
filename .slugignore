@@ -1,0 +1,8 @@
+node_modules
+bower_components
+tests
+manifest.yml
+.cfignore
+.editorconfig
+.eyeglass_cache
+.travis.yml
