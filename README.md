@@ -56,8 +56,16 @@ Server boilerplate are required (marked with `*`) and optional files and folders
   * `config/test.js` - Configuration to be used when the Node Environment is `test`. Recommended to use `sqlite3` for testing as it's faster than a full PostgreSQL database. Options present here override the default config and fall back to the default if not present.
   * `config/production.js` - Configuration to be used the Node Environment is `production`. Recommend for production environments, with Environment Variables used to hold keys and other secrets. Options present here override the default config and fall back to the default if not present.
 * `content-types`* - The folder to hold [Content Types](https://github.com/punchcard-cms/content-types#defining-a-content-type) for use with Punchcard. Punchcard extends the Content Type definition with a top-level attribute `workflow` that should be set to an ID of a provided workflow (below).
+  * `content-types/article.yml` - A basic content type for an article. Includes file upload, repeatable, and reference attributes.
+  * `content-types/author.yml` - A basic content type for a content author. Includes a file upload attribute, as well as an attribute from a custom input plugin.
 * `workflows`* -The folder to hold [workflows](https://github.com/punchcard-cms/punchcard/tree/master/workflows) for use with defined content types. Workflows can be set for a given content type by adding `workflow: ID` in a Content Type, with `ID` replaced by the ID of the approval workflow.
+  * `workflows/self-publish.yml` - A workflow with one step that allows the individual who authored a piece of content to approve it
 * `input-plugins` - The folder to hold custom [Input Plugins](https://github.com/punchcard-cms?utf8=%E2%9C%93&query=input-plugin) for use in Punchcard. A sample input plugin is provided.
+  * `input-plugins/utils.js` - Helpful functions for creating custom input plugins
+  * `input-plugins/input-plugin-address` - Custom Address input plugin
+    * `input-plugins/input-plugin-address/README.md` - README for Address input plugin
+    * `input-plugins/input-plugin-address/index.js` - Input plugin definition file
+    * `input-plugins/input-plugin-address/package.json` - Basic [Node configuration](https://docs.npmjs.com/files/package.json) for custom input plugin. Custom input plugin dependencies should be saved to the [main Node configuration](#config-boilerplate)
 * `views` - [Nunjucks](https://mozilla.github.io/nunjucks/) templates to be made available to Punchcard. Putting an identically named template at the identical relative path to a template in the core Punchcard module will overwrite the core template with the provided one
   * `views/content/add.html` - Template override for the Content Add template from Punchcard. Changes the URL of the provided browser JavaScript to the compiled one for the custom implementation.
 
@@ -79,6 +87,7 @@ Browser boilerplate is based on the default source and destination targets using
 **AVA Tests**
 * `tests` - Folder to run all tests
   * `tests/server.js` - Basic test using [SuperTest](https://www.npmjs.com/package/supertest) to ensure Punchcard is able to start
+  * `tests/plugin.js` - Tests for the custom input plugin. Tests come from [Punchcard Shared Tests](https://github.com/punchcard-cms/shared-tests)
 
 **Linting**
 * `.eslintrc.yml` - [ESLint](https://www.npmjs.com/package/eslint) configuration for all Node code
@@ -97,5 +106,5 @@ There is a handful of general configuration files. Files that are required are m
 * `.travis.yml` - Configuration file for [Travis](https://travis-ci.org/) Continuous Integration. Configures Travis to use Node 6, cache `node_modules` and Yarn's cache, install Yarn, run tests, and on success send code coverage to [Coveralls](https://coveralls.io/), create a new [semantic release](https://github.com/punchcard-cms/punchcard/blob/master/CONTRIBUTING.md#creating-a-release), update labels using [Reparo](https://reparo.herokuapp.com/), and deploy to Heroku after successful tests are run on the `master` branch, all while ignoring running any CI on release branches
 * `Procfile` - Configuration file to tell Heroku (or Heroku-compatible system) what command to run for different contexts. Configures Heroku to run `yarn start` (the `start` script in `package.json`) when in a `web` context
 * `app.json` - Heroku (or Heroku-compatible system) [application manifest](https://blog.heroku.com/introducing_the_app_json_application_manifest)
-* `package.json`* - [Node configuration](https://docs.npmjs.com/files/package.json). In a production environment where deploys can happen from a Continuous Integration server, `gulp`, `gulp-concat`, `gulp-imagemin`, `gulp-uglify`, and `punchcard-runner` should all be `devDependencies` and the `prestart` script should not exist
+* `package.json`* - [Node configuration](https://docs.npmjs.com/files/package.json). In a production environment where deploys can happen from a Continuous Integration server, `gulp`, `gulp-concat`, `gulp-imagemin`, `gulp-uglify`, and `punchcard-runner` should all be `devDependencies` and the `prestart` script should not exist. All `dependencies` that start with `input-plugin-`, as well as `lodash`, are dependencies for the sample content types and the [custom input plugin](#server-boilerplate)
 * `yarn.lock` - Generated [Yarn lock](https://yarnpkg.com/en/docs/yarn-lock)
