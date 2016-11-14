@@ -1,0 +1,19 @@
+name: Author
+description: Author of a piece of content
+id: author
+workflow: self-publish
+identifier: name
+attributes:
+  - type: text
+    id: name
+    name: Name
+    description: Name of the author
+    required: save
+  - type: file
+    id: headshot
+    name: Headshot
+    description: Headshot of author
+  - type: address
+    id: address
+    name: Mailing Address
+    description: Mailing address of author
