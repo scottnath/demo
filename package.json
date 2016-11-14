@@ -74,5 +74,8 @@
   "release": {
     "analyzeCommits": "punchcard-semantic-release/analyze",
     "generateNotes": "punchcard-semantic-release/notes"
+  },
+  "engines": {
+    "node": "^6"
   }
 }
