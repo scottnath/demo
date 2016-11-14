@@ -12,3 +12,24 @@ attributes:
     inputs:
       text:
         placeholder: Title
+  - type: textarea
+    id: body
+    name: Body
+    description: Body of the article
+    required: publish
+  - type: reference
+    id: author
+    name: Author
+    description: Author of article
+    required: publish
+    repeatable:
+      min: 1
+      max: 4
+    inputs:
+      reference:
+        settings:
+          contentType: author
+  - type: file
+    id: hero-image
+    name: Hero Image
+    description: Hero Images for Article
