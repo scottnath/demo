@@ -13,13 +13,14 @@ const options = runner.config({
         'lib',
         'config',
         'content-types',
-        'input-plugins'
+        'input-plugins',
+        'workflows',
       ],
-    }
+    },
   },
   tasks: {
     nodemon: {
-      extension: 'js html yml'
+      extension: 'js html yml',
     },
     build: {
       clean: [
@@ -30,14 +31,14 @@ const options = runner.config({
         'imagemin',
         'js',
         'punchcard:js',
-        'punchcard:images'
+        'punchcard:images',
       ],
-    }
+    },
   },
   server: {
     port: config.env.port,
-    host: config.env.host
-  }
+    host: config.env.host,
+  },
 });
 
 runner(gulp, options);
