@@ -15,7 +15,7 @@ const application = () => {
  */
 /* istanbul ignore next */
 if (!module.parent) {
-  application.then(app => {
+  application().then(app => {
     app.listen(config.env.port, () => {
       // Mean to console.log out, so disabling
       console.log(`Server starting on ${config.env.url}`); // eslint-disable-line no-console
