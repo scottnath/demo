@@ -17,11 +17,11 @@ const application = () => {
 if (!module.parent) {
   application().then(app => {
     app.listen(config.env.port, () => {
-      // Mean to console.log out, so disabling
+      // Mean to console.log out, so disabling eslint
       console.log(`Server starting on ${config.env.url}`); // eslint-disable-line no-console
     });
   }).catch(e => {
-    // Mean to console.log out, so disabling
+    // Mean to console.log out, so disabling eslint
     console.error(e.stack); // eslint-disable-line no-console
   });
 }
