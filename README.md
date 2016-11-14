@@ -63,7 +63,7 @@ Server boilerplate are required (marked with `*`) and optional files and folders
 
 ### Browser Boilerplate
 
-Browser boilerplate is based on the default source and destination targets using [Punchcard Runner](https://github.com/punchcard-cms/runner). These can be modified and methods for compiling can changed as desired, as long as settings are updated as appropriate for Punchcard Runner.
+Browser boilerplate is based on the default source and destination targets using [Punchcard Runner](https://github.com/punchcard-cms/runner). These can be modified, and methods for compiling can be changed, as long as settings are updated as appropriate for Punchcard Runner.
 
 * `src` - The folder to hold static files that will be served to the browser. Compiled versions will be made available in the `public` folder.
   * `src/images` - Images to be available in the browser. Will render to `public/images` and available in the `/images` folder from the browser
