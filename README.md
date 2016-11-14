@@ -52,9 +52,9 @@ Server boilerplate are required (marked with `*`) and optional files and folders
 
 * `index.js`* - The main file to actually run. The file presented is the bare minimum file recommended to make Punchcard both run and be testable. Punchcard is a Promise that returns a configured Express application that can be extended as if it were a local Express application.
 * `config`* - Punchcard [config](https://www.npmjs.com/package/config) configuration files
-  * `config/default.js`* - Default configuration to be shared regardless of environment. Extends the core Punchcard config to provide all default configuration
-  * `config/test.js` - Configuration to be used when the Node Environment is `test`. Recommended to use `sqlite3` for testing as it's faster than a full PostgreSQL database
-  * `config/production.js` - Configuration to be used the Node Environment is `production`. Recommend for production environments, with Environment Variables used to hold keys and other secrets.
+  * `config/default.js`* - Default configuration to be shared regardless of environment. Extends the core Punchcard config to provide all default configuration. Without this configuration extension, Punchcard will not run.
+  * `config/test.js` - Configuration to be used when the Node Environment is `test`. Recommended to use `sqlite3` for testing as it's faster than a full PostgreSQL database. Options present here override the default config and fall back to the default if not present.
+  * `config/production.js` - Configuration to be used the Node Environment is `production`. Recommend for production environments, with Environment Variables used to hold keys and other secrets. Options present here override the default config and fall back to the default if not present.
 * `content-types`* - The folder to hold [Content Types](https://github.com/punchcard-cms/content-types#defining-a-content-type) for use with Punchcard. Punchcard extends the Content Type definition with a top-level attribute `workflow` that should be set to an ID of a provided workflow (below).
 * `workflows`* -The folder to hold [workflows](https://github.com/punchcard-cms/punchcard/tree/master/workflows) for use with defined content types. Workflows can be set for a given content type by adding `workflow: ID` in a Content Type, with `ID` replaced by the ID of the approval workflow.
 * `input-plugins` - The folder to hold custom [Input Plugins](https://github.com/punchcard-cms?utf8=%E2%9C%93&query=input-plugin) for use in Punchcard. A sample input plugin is provided.
