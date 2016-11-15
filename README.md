@@ -1,6 +1,6 @@
-# Punchcard Demo [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/punchcard-cms/demo)
+# Punchcard Demo [![Build Status](https://travis-ci.org/punchcard-cms/demo.svg?branch=master)](https://travis-ci.org/punchcard-cms/demo) [![Coverage Status](https://coveralls.io/repos/github/punchcard-cms/demo/badge.svg?branch=master)](https://coveralls.io/github/punchcard-cms/demo?branch=master)
 
-[![Build Status](https://travis-ci.org/punchcard-cms/demo.svg?branch=master)](https://travis-ci.org/punchcard-cms/demo) [![Coverage Status](https://coveralls.io/repos/github/punchcard-cms/demo/badge.svg?branch=master)](https://coveralls.io/github/punchcard-cms/demo?branch=master)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/punchcard-cms/demo)
 
 Quickly deploy [Punchcard CMS](https://github.com/punchcard-cms/punchcard) to Heroku, or use this repository as an example to deploy Punchcard anywhere.
 
