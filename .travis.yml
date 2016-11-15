@@ -18,7 +18,7 @@ before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -y -qq yarn
 
-install: yarn
+install: yarn install --pure-lockfile
 
 script: yarn test
 
