@@ -1,6 +1,6 @@
 {
-  "name": "Punchcard Demo",
-  "description": "Demo deployable instance of the Punchcard CMS",
+  "name": "Punchcard CMS",
+  "description": "Headless Node based Content Management System designed with Content Strategy at its heart.",
   "repository": "https://github.com/punchcard-cms/demo",
   "logo": "https://cloud.githubusercontent.com/assets/377188/20324120/4ae50c9c-ab4d-11e6-836a-f7a6455f99ab.png",
   "keywords": [
