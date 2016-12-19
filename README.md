@@ -11,8 +11,6 @@ Punchcard is a [Node.js](https://nodejs.org/) based headless Content Management 
 * Node.js - **6.0 or greater**
 * PostgreSQL - **9.5 or greater**
 
-In addition, it is recommended that [Yarn](https://yarnpkg.com/) is used for package management. This repository does so as an example. All relevant commands will be using Yarn, but the relevant NPM commands can be found in Yarn's [migration documentation](https://yarnpkg.com/en/docs/migrating-from-npm). For `run` commands (like `yarn run build`), substitute `npm` for `yarn`.
-
 ## Running Locally
 
 Ensure that PostgreSQL is available on the command line and accessible via the `postgres` command. Create a user that has a password `W@ts0n` and ensure that there is a `punchcard` database created.
@@ -29,12 +27,12 @@ If working on a Mac, [Homebrew](http://brew.sh/) is a convenient way to install 
 
 When working locally, there are two things that need to run: the database and the server. There are a number of helper scripts that ship with this repository to help with that:
 
-* `yarn run dev:database` - Runs PostgreSQL, assuming it's been installed via Homebrew
-* `yarn run dev:start` - Runs [Gulp](http://gulpjs.com/) default task, as defined in the [Punchcard Runner](https://github.com/punchcard-cms/runner)
-* `yarn run dev` - Runs `dev:database` and `dev:start`
-* `yarn run lint` - Runs the Gulp `lint` task, as defined in the Punchcard Runner
-* `yarn run build` - Runs the Gulp `build` task, as defined in the Punchcard Runner
-* `yarn test` - Runs `lint`, then [tests](#testing), then `build`
+* `npm run dev:database` - Runs PostgreSQL, assuming it's been installed via Homebrew
+* `npm run dev:start` - Runs [Gulp](http://gulpjs.com/) default task, as defined in the [Punchcard Runner](https://github.com/punchcard-cms/runner)
+* `npm run dev` - Runs `dev:database` and `dev:start`
+* `npm run lint` - Runs the Gulp `lint` task, as defined in the Punchcard Runner
+* `npm run build` - Runs the Gulp `build` task, as defined in the Punchcard Runner
+* `npm test` - Runs `lint`, then [tests](#testing), then `build`
 
 ## Testing
 
@@ -103,8 +101,7 @@ There is a handful of general configuration files. Files that are required are m
 * `.gitignore` - Files and file patterns for Git to ignore
 * `.nvmrc` - Node version for [Node Version Manager](https://github.com/creationix/nvm) to use. Helps ensure that the correct version of Node is being used given multiple versions of Node available on a system
 * `.slugignore` - Files and file patterns to be ignored when Heroku (or Heroku-compatible system) builds the server deployment
-* `.travis.yml` - Configuration file for [Travis](https://travis-ci.org/) Continuous Integration. Configures Travis to use Node 6, cache `node_modules` and Yarn's cache, install Yarn, run tests, and on success send code coverage to [Coveralls](https://coveralls.io/), create a new [semantic release](https://github.com/punchcard-cms/punchcard/blob/master/CONTRIBUTING.md#creating-a-release), update labels using [Reparo](https://reparo.herokuapp.com/), and deploy to Heroku after successful tests are run on the `master` branch, all while ignoring running any CI on release branches
-* `Procfile` - Configuration file to tell Heroku (or Heroku-compatible system) what command to run for different contexts. Configures Heroku to run `yarn start` (the `start` script in `package.json`) when in a `web` context
+* `.travis.yml` - Configuration file for [Travis](https://travis-ci.org/) Continuous Integration. Configures Travis to use Node 6, cache `node_modules`, run tests, and on success send code coverage to [Coveralls](https://coveralls.io/), create a new [semantic release](https://github.com/punchcard-cms/punchcard/blob/master/CONTRIBUTING.md#creating-a-release), update labels using [Reparo](https://reparo.herokuapp.com/), and deploy to Heroku after successful tests are run on the `master` branch, all while ignoring running any CI on release branches
+* `Procfile` - Configuration file to tell Heroku (or Heroku-compatible system) what command to run for different contexts. Configures Heroku to run `npm start` (the `start` script in `package.json`) when in a `web` context
 * `app.json` - Heroku (or Heroku-compatible system) [application manifest](https://blog.heroku.com/introducing_the_app_json_application_manifest)
 * `package.json`* - [Node configuration](https://docs.npmjs.com/files/package.json). In a production environment where deploys can happen from a Continuous Integration server, `gulp`, `gulp-concat`, `gulp-imagemin`, `gulp-uglify`, and `punchcard-runner` should all be `devDependencies` and the `prestart` script should not exist. All `dependencies` that start with `input-plugin-`, as well as `lodash`, are dependencies for the sample content types and the [custom input plugin](#server-boilerplate)
-* `yarn.lock` - Generated [Yarn lock](https://yarnpkg.com/en/docs/yarn-lock)
