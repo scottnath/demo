@@ -34,6 +34,12 @@ const options = runner.config({
         'punchcard:images',
       ],
     },
+    watch: [
+      'browser-sync',
+      'js:watch',
+      'sass:watch',
+      'imagemin:watch',
+    ]
   },
   server: {
     port: config.env.port,

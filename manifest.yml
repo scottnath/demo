@@ -1,0 +1,12 @@
+applications:
+- path: .
+  memory: 256M
+  instances: 1
+  domain: mybluemix.net
+  name: punchcard
+  host: punchcard
+  disk_quota: 1024M
+  env:
+    aws_access_key_id: AKIAJJUJ4IRESBL3MDZQ
+    aws_secret_access_key: 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
+    region: us-west-2
