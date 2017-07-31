@@ -1,0 +1,35 @@
+name: Label Configuration
+description: Configuration for labels.
+id: labels-config
+workflow: self-publish
+identifier: title
+attributes:
+  - type: text
+    id: title
+    name: Title
+    description: Title of the Labels
+    required: save
+    inputs:
+      text:
+        placeholder: Title
+  - type: select
+    id: type
+    name: Type
+    description: The type of labels
+    required: save
+    inputs:
+      select:
+        options:
+          - label: Category
+            value: category
+          - label: Type
+            value: type
+  - type: reference
+    id: relation
+    name: Relation
+    description: Labels related to...
+    repeatable: true
+    inputs:
+      reference:
+        settings:
+          contentType: labels-config

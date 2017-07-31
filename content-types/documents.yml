@@ -1,0 +1,11 @@
+name: Documents
+description: Documents
+id: documents
+workflow: self-publish
+identifier: name
+attributes:
+  - type: text
+    id: name
+    name: Name
+    description: Name of the document
+    required: save

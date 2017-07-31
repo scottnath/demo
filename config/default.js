@@ -10,4 +10,7 @@ config.content.plugins = {
 
 config.workflows.directory = path.join(__dirname, '../workflows');
 
+config.env = config.env || {};
+config.env.port = process.env.PORT || 3000;
+
 module.exports = config;

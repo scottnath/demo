@@ -1,0 +1,39 @@
+name: User's Labels
+description: User-selected labels
+id: user-labels
+workflow: self-publish
+identifier: sentence
+attributes:
+  - type: number
+    id: sentence
+    name: Sentence
+  - type: reference
+    id: subdocument
+    name: Subdocument
+    description: Subdocument reference
+    required: save
+    inputs:
+      reference:
+        settings:
+          contentType: subdocument
+  - type: reference
+    id: category
+    name: Category
+    description: Array of user selected categories
+    required: save
+    repeatable: true
+    inputs:
+      reference:
+        settings:
+          contentType: labels-options
+  - type: types
+    id: types
+    name: Types
+    description: Array of user selected types
+    required: save
+    repeatable: true
+    inputs:
+      nature:
+        label: 'Nature'
+      party:
+        label: 'Party'

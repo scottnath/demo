@@ -1,0 +1,5 @@
+{
+  "name": "input-plugin-types",
+  "description": "Types plugin",
+  "main": "index.js"
+}

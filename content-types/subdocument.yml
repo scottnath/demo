@@ -1,0 +1,39 @@
+name: Subdocument
+description: Sentences that make up a document
+id: subdocument
+workflow: self-publish
+identifier: sentence
+attributes:
+  - type: text
+    id: sentence
+    name: Sentence
+    description: Text of the sentence
+    required: save
+    inputs:
+      text:
+        placeholder: Sentence
+  - type: reference
+    id: document
+    name: Document
+    description: Document where sentence lives
+    required: save
+    inputs:
+      reference:
+        settings:
+          contentType: documents
+  - type: number
+    id: begins
+    name: Begins
+    description: Number where subdocument begins
+    required: save
+    inputs:
+      number:
+        placeholder: Begins
+  - type: number
+    id: ends
+    name: Ends
+    description: Number where subdocument ends
+    required: save
+    inputs:
+      number:
+        placeholder: Ends

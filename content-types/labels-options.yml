@@ -1,0 +1,30 @@
+name: Label Options
+description: Selectable label options.
+id: labels-options
+workflow: self-publish
+identifier: label
+attributes:
+  - type: text
+    id: label
+    name: Label
+    description: Text of the label
+    required: save
+    inputs:
+      text:
+        placeholder: Label text
+  - type: reference
+    id: type
+    name: type
+    description: Label selection under...
+    inputs:
+      reference:
+        settings:
+          contentType: labels-config
+  - type: text
+    id: i-18-n
+    name: i18n
+    description: Translations for label text
+    repeatable: true
+    inputs:
+      text:
+        placeholder: Translation
