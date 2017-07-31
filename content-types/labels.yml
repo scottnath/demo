@@ -2,11 +2,11 @@ name: User's Labels
 description: User-selected labels
 id: user-labels
 workflow: self-publish
-identifier: sentence
+identifier: user
 attributes:
   - type: number
-    id: sentence
-    name: Sentence
+    id: user
+    name: User-ID-Placeholder
   - type: reference
     id: subdocument
     name: Subdocument
